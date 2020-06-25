@@ -1,0 +1,21 @@
+[ru]
+DOTA_FIRST_BLOOD = %s Проливает первую кровь!
+DOTA_KILLINGSPREE = %s Совершает серию убийств!
+DOTA_DOMINATING = %s Доминирует!
+DOTA_MEGAKILL = %s Совершает мега убийство!
+DOTA_UNSTOPPABLE = %s 
+DOTA_WICKEDSICK = %s
+DOTA_MONSTERKILL = %s
+DOTA_GODLIKE = %s БОГОПОДОБЕН!
+DOTA_BEYONDGODLIKE = %s ПРЕВОСХОДИТ БОГОВ, убeйте его кто нибудь!
+
+[en]
+DOTA_FIRST_BLOOD = %s Проливает первую кровь!
+DOTA_KILLINGSPREE = %s Совершает серию убийств!
+DOTA_DOMINATING = %s Доминирует!
+DOTA_MEGAKILL = %s Совершает мега убийство!
+DOTA_UNSTOPPABLE = %s 
+DOTA_WICKEDSICK = %s
+DOTA_MONSTERKILL = %s
+DOTA_GODLIKE = %s БОГОПОДОБЕН!
+DOTA_BEYONDGODLIKE = %s ПРЕВОСХОДИТ БОГОВ, убeйте его кто нибудь!
