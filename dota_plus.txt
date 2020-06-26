@@ -1,21 +1,25 @@
 [ru]
-DOTA_FIRST_BLOOD = %s Проливает первую кровь!
-DOTA_KILLINGSPREE = %s Совершает серию убийств!
-DOTA_DOMINATING = %s Доминирует!
-DOTA_MEGAKILL = %s Совершает мега убийство!
-DOTA_UNSTOPPABLE = %s 
-DOTA_WICKEDSICK = %s
-DOTA_MONSTERKILL = %s
-DOTA_GODLIKE = %s БОГОПОДОБЕН!
-DOTA_BEYONDGODLIKE = %s ПРЕВОСХОДИТ БОГОВ, убeйте его кто нибудь!
+DOTA_FIRST_BLOOD = %s проливает первую кровь!
+DOTA_KILLINGSPREE = %s совершает серию убийств!
+DOTA_DOMINATING = %s набирает превосходство!
+DOTA_MEGAKILL = %s совершает мега-убийство!
+DOTA_UNSTOPPABLE = %s показывает неудержимость
+DOTA_WICKEDSICK = %s свирепствует
+DOTA_MONSTERKILL = %s зверствует!
+DOTA_GODLIKE = %s заслуживает БОГОПОДОБИЕ!
+DOTA_BEYONDGODLIKE = %s ПРЕВОСХОДИТ БОГОВ! Когда же это кончится?!
+DOTA_STATUS = Опыт: [%d/%d] ^nУровень: [%d]
+DOTA_MAXLVL = Опыт: [MAX] ^nУровень:[30]
 
 [en]
-DOTA_FIRST_BLOOD = %s Проливает первую кровь!
-DOTA_KILLINGSPREE = %s Совершает серию убийств!
-DOTA_DOMINATING = %s Доминирует!
-DOTA_MEGAKILL = %s Совершает мега убийство!
-DOTA_UNSTOPPABLE = %s 
-DOTA_WICKEDSICK = %s
-DOTA_MONSTERKILL = %s
-DOTA_GODLIKE = %s БОГОПОДОБЕН!
-DOTA_BEYONDGODLIKE = %s ПРЕВОСХОДИТ БОГОВ, убeйте его кто нибудь!
+DOTA_FIRST_BLOOD = %s drew first blood!
+DOTA_KILLINGSPREE = %s is on a killing spree
+DOTA_DOMINATING = %s is dominating
+DOTA_MEGAKILL = %s is on a mega-kill kill streak
+DOTA_UNSTOPPABLE = %s is unstoppable
+DOTA_WICKEDSICK = %s is wicked sick!
+DOTA_MONSTERKILL = %s is on a monster kill streak!
+DOTA_GODLIKE = %s is GODLIKE
+DOTA_BEYONDGODLIKE = %s is beyond GODLIKE, someone kill them!!
+DOTA_STATUS = XP : [%d/%d] ^nLevel: [%d]
+DOTA_MAXLVL = XP: [MAX] ^nLevel:[30]
