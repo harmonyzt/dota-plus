@@ -4,7 +4,7 @@
 #define ver "build-1.0-stable"
 
 //	Includes skills and menus for each class
-#include "dotaplus/sniper.h"
+#include "dotaplus/sniper.inl"
 /*
 			Start of registration!
  */
