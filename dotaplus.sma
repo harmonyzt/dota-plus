@@ -125,7 +125,6 @@ public checklvl(id){
 		UserData[id][gLevel]++
 		UserData[id][skillpoint]++
 		UserData[id][exp] = 0
-		UPGRADE_MENU(id)
 	}
 }
 

@@ -12,7 +12,7 @@ DOTA_STATUS = Опыт: [%d/%d] ^nУровень: [%d]
 DOTA_MAXLVL = Опыт: [MAX] ^nУровень:[30]
 
 //  Главное Меню
-DOTA_MENU_TITLE = \rСкиллпоинты - [%d]
+DOTA_MENU_TITLE = \rМеню навыков^n Скиллпоинты - [%d]
 DOTA_MENU_EXIT = Выход
 
 // Навыки снайпера

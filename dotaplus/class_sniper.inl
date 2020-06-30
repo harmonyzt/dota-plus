@@ -1,9 +1,11 @@
 public upgr_menu_sniper(id){
-    new menu = menu_create("%L", "main_menu_handler", LANG_PLAYER, "DOTA_MENU_TITLE", UserData);
-    menu_additem(menu, "%L", "1", LANG_PLAYER, "DOTA_SKILL_SNIPER_1");
-    menu_additem(menu, "%L", "2", LANG_PLAYER, "DOTA_SKILL_SNIPER_2");
-    menu_additem(menu, "%L", "3", LANG_PLAYER, "DOTA_SKILL_SNIPER_3");
-    menu_additem(menu, "%L", "4", LANG_PLAYER, "DOTA_SKILL_SNIPER_ULT");
+    static menitem[64], iLen;
+    iLen = formatex(menitem, 63, "%L", LANG_PLAYER, "DOTA_MENU_TITLE", UserData[id][skillpoint]);
+    new menu = menu_create(menitem, "main_menu_handler");
+    menu_additem(menu, "%L", "1");
+    menu_additem(menu, "%L", "2");
+    menu_additem(menu, "%L", "3");
+    menu_additem(menu, "%L", "4");
     menu_setprop(menu, MPROP_EXITNAME, "%L", LANG_PLAYER, "DOTA_MENU_EXIT")
     //menu_setprop(menu, MPROP_PERPAGE, 0) // Removes buttons (dont)
     menu_display(id, menu, 0)
@@ -22,13 +24,13 @@ public main_menu_handler(id, menu, item)
         switch(str_to_num(data))
         {
             case 1:  {
-                       client_cmd(id,"spk hello");
+                      client_cmd(id,"spk hello");
                      }
             case 2:  {
-                       client_cmd(id,"spk hello");
+                      client_cmd(id,"spk hello");
                      }
             case 3:  {
-                       client_cmd(id,"spk hello");
+                      client_cmd(id,"spk hello");
                      }
             case 4:  {
                       client_cmd(id,"spk hello");
