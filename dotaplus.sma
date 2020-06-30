@@ -141,3 +141,10 @@ public render_info(){
 	}
 }
 
+public plugin_natives(){
+	register_native("get_user_skillpoints", "native_get_user_skillpoints", 1);
+	register_native("give_user_xp", "native_give_user_xp", 1);
+	register_native("set_user_xp", "native_set_user_xp", 1);
+	register_native("get_user_xp", "native_get_user_xp", 1);
+	register_native("get_user_level", "native_get_user_xp", 1);
+}

@@ -1,6 +1,8 @@
+#include < dota_plus >
+
 public upgr_menu_sniper(id){
-    static menitem[64], iLen;
-    iLen = formatex(menitem, 63, "%L", LANG_PLAYER, "DOTA_MENU_TITLE", UserData[id][skillpoint]);
+    static menitem[64]
+    formatex(menitem, 63, "%L", LANG_PLAYER, "DOTA_MENU_TITLE", UserData[id][skillpoint]);
     new menu = menu_create(menitem, "main_menu_handler");
     menu_additem(menu, "%L", "1");
     menu_additem(menu, "%L", "2");
