@@ -10,14 +10,16 @@ DOTA_GODLIKE = %s заслуживает БОГОПОДОБИЕ!
 DOTA_BEYONDGODLIKE = %s ПРЕВОСХОДИТ БОГОВ! Когда же это кончится?!
 DOTA_STATUS = Опыт: [%d/%d] ^nУровень: [%d]
 DOTA_MAXLVL = Опыт: [MAX] ^nУровень:[30]
-DOTA_SKILLTITLE = Скиллпоинты - [%d]
-DOTA_SKILLTITLE = тест
+
+//  Главное Меню
+DOTA_MENU_TITLE = \rСкиллпоинты - [%d]
+DOTA_MENU_EXIT = Выход
 
 // Навыки снайпера
-DOTA_SKILL_SNIPER_1 = Быстрый Курок
-DOTA_SKILL_SNIPER_2 = Меткость
-DOTA_SKILL_SNIPER_3 = Разрывной патрон
-DOTA_SKILL_SNIPER_ULT = Выстрел на удачу
+DOTA_SKILL_SNIPER_1 = \wБыстрый Курок
+DOTA_SKILL_SNIPER_2 = \wМеткость
+DOTA_SKILL_SNIPER_3 = \wРазрывной патрон
+DOTA_SKILL_SNIPER_ULT = \rВыстрел на удачу
 // Конец
 
 [en]

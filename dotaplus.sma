@@ -1,7 +1,7 @@
 #include < amxmodx >
 #include < csx >
 #include < dhudmessage >
-#define ver "build-1.3-prerelease"
+#define ver "build-1.0-stable"
 
 //	Includes skills and menus for each class
 #include "dotaplus/sniper.h"
@@ -33,6 +33,7 @@ public plugin_init(){
 	register_event("DeathMsg","func_player_dead","a");
 	set_task(1.0,"render_info",0,_,_, "b")
 	register_event("HLTV", "new_round", "a", "1=0", "2=0");
+	register_clcmd("upgr_menu_sniper", "cmdmenu", -1)
 }
 
 public func_player_dead(id){
@@ -141,33 +142,3 @@ public render_info(){
 	}
 }
 
-public UPGRADE_MENU(id){
-static pos, szMenu[256], keys;
-keys = (1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4)|(1<<5)|(1<<6)|(1<<9);
-pos = 0;
-// Title
-pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "%L^n^n", LANG_PLAYER, "DOTA_SKILLSTITLE", UserData[id][skillpoint]);
-    
-// Add the actual options to the menu
-pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "\w1. %L^n", LANG_PLAYER, "DOTA_SKILL_1" );
-pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "\w2. %L^n", LANG_PLAYER, "DOTA_SKILL_2" );
-pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "\w3. %L^n", LANG_PLAYER, "DOTA_SKILL_3" );
-pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "\y4. %L^n", LANG_PLAYER, "DOTA_SKILL_ULTIMATE" );
-pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "^n\d0. %L", LANG_PLAYER, "WORD_EXIT" );
-
-// Display the menu
-show_menu(id, keys, szMenu, -1);
-
-return;
-}
-
-public _UPGRADE_MENU(id, key){
-	switch ( key ){
-		case 0:	console_print(0,"it works")
-		case 1:	console_print(0,"it works")
-		case 2:	console_print(0,"it works")
-		case 3:	console_print(0,"it works")
-		case 4:	console_print(0,"it works")
-		}
-	return PLUGIN_HANDLED;
-}
