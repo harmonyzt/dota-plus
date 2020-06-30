@@ -2,6 +2,9 @@
 #include < csx >
 #include < dhudmessage >
 #define ver "build-1.3-prerelease"
+
+//	Includes skills and menus for each class
+#include "dotaplus/sniper.h"
 /*
 			Start of registration!
  */
