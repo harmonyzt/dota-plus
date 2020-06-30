@@ -2,24 +2,33 @@
 #include < csx >
 #include < dhudmessage >
 #define ver "build-1.3-prerelease"
-
+/*
+			Start of registration!
+ */
 new first_blood=0
 new name_killer[33]
 enum _:Massives
 {
-    exp, kills, gLevel
+    exp, kills, gLevel, skillpoint
 };
+new UserData[50][Massives];
 new const levels[] =
 {
 	0,5,6,7,10,11,12,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,32,34,38,42,50,60,70
+};	//How much you need to get xp to next level
+enum _:Classes
+{
+    sniper	//Class registration
 };
-new UserData[50][Massives];
-new bool:on_streak[33]
+new bool:on_streak[33]	//Is a person on kill streak?
+/*
+			End of registration. Plugin init stage!
+ */
 public plugin_init(){
 	register_plugin("Dota Mod+", ver, "unknown");
 	register_dictionary("dota_plus.txt")
 	register_event("DeathMsg","func_player_dead","a");
-	set_task(1.0,"render_info",_,_,_, "b")
+	set_task(1.0,"render_info",0,_,_, "b")
 	register_event("HLTV", "new_round", "a", "1=0", "2=0");
 }
 
@@ -105,15 +114,14 @@ public client_putinserver(id){
 
 public new_round(){
 	first_blood=0
-	for(new id = 1; id <= 32; id++){
-
-	}
 }
 
 public checklvl(id){
-if(UserData[id][exp] >= levels[UserData[id][gLevel]]){
-	UserData[id][gLevel]++
-	UserData[id][exp] = 0
+	if(UserData[id][exp] >= levels[UserData[id][gLevel]]){
+		UserData[id][gLevel]++
+		UserData[id][skillpoint]++
+		UserData[id][exp] = 0
+		UPGRADE_MENU(id)
 	}
 }
 
@@ -130,6 +138,33 @@ public render_info(){
 	}
 }
 
-/* AMXX-Studio Notes - DO NOT MODIFY BELOW HERE
-*{\\ rtf1\\ ansi\\ deff0{\\ fonttbl{\\ f0\\ fnil Tahoma;}}\n\\ viewkind4\\ uc1\\ pard\\ lang1049\\ f0\\ fs16 \n\\ par }
-*/
+public UPGRADE_MENU(id){
+static pos, szMenu[256], keys;
+keys = (1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4)|(1<<5)|(1<<6)|(1<<9);
+pos = 0;
+// Title
+pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "%L^n^n", LANG_PLAYER, "DOTA_SKILLSTITLE", UserData[id][skillpoint]);
+    
+// Add the actual options to the menu
+pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "\w1. %L^n", LANG_PLAYER, "DOTA_SKILL_1" );
+pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "\w2. %L^n", LANG_PLAYER, "DOTA_SKILL_2" );
+pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "\w3. %L^n", LANG_PLAYER, "DOTA_SKILL_3" );
+pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "\y4. %L^n", LANG_PLAYER, "DOTA_SKILL_ULTIMATE" );
+pos += formatex( szMenu[pos], charsmax(szMenu)-pos, "^n\d0. %L", LANG_PLAYER, "WORD_EXIT" );
+
+// Display the menu
+show_menu(id, keys, szMenu, -1);
+
+return;
+}
+
+public _UPGRADE_MENU(id, key){
+	switch ( key ){
+		case 0:	console_print(0,"it works")
+		case 1:	console_print(0,"it works")
+		case 2:	console_print(0,"it works")
+		case 3:	console_print(0,"it works")
+		case 4:	console_print(0,"it works")
+		}
+	return PLUGIN_HANDLED;
+}
