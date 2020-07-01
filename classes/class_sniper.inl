@@ -1,4 +1,4 @@
-#include < dota_plus >
+#include < dotaplus >
 
 public upgr_menu_sniper(id){
     static menitem[64]

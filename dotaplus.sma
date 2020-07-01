@@ -4,7 +4,7 @@
 #define ver "build-1.0-stable"
 
 //	Includes skills and menus for each class
-#include "dotaplus/class_sniper.inl"
+#include "classes/class_sniper.inl"
 /*
 			Start of registration!
  */
@@ -23,7 +23,7 @@ enum _:Classes
 {
     sniper	//Class registration
 };
-new bool:on_streak[33]	//Is a person on kill streak?
+
 /*
 			End of registration. Plugin init stage!
  */
@@ -47,7 +47,7 @@ public func_player_dead(id){
 	UserData[victim][kills]=0
 	on_streak[victim]=false
 	get_user_name(killer, name_killer, 32)
-	if(first_blood == 0 && on_streak[killer]!=true){
+	if(first_blood == 0 && UserData[id][kills]=>3){
 		UserData[killer][exp]++
 		set_dhudmessage(212, 0, 0, -1.0, 0.25, 0, 6.0, 3.0, 0.2, 1.0)
 		show_hudmessage(0, "%L", LANG_PLAYER, "DOTA_FIRST_BLOOD", name_killer)
@@ -128,7 +128,6 @@ public checklvl(id){
 	}
 }
 
-
 public render_info(){
 	for(new id = 1; id <= 32; id++){
 		if(!is_user_bot(id) && is_user_connected(id) && levels[UserData[id][gLevel]]<=30){
@@ -146,5 +145,32 @@ public plugin_natives(){
 	register_native("give_user_xp", "native_give_user_xp", 1);
 	register_native("set_user_xp", "native_set_user_xp", 1);
 	register_native("get_user_xp", "native_get_user_xp", 1);
-	register_native("get_user_level", "native_get_user_xp", 1);
+	register_native("get_user_level", "native_get_user_level", 1);
+	register_native("is_first_blood", "native_is_first_blood", 1);
+	register_native("is_on_kstreak", "native_is_on_kstreak", 1);
+}
+// Natives!
+public native_get_user_skillpoints(id){
+	return UserData[id][skillpoint]
+}
+public native_give_user_xp(id, num){
+	UserData[id][exp] += num
+}
+public native_get_user_xp(id){
+	return UserData[id][exp]
+}
+public native_set_user_xp(id, num){
+	UserData[id][exp] = num
+}
+public native_get_user_level(id){
+	return UserData[id][gLevel]
+}
+public native_is_first_blood(id){
+	return first_blood
+}
+
+public native_is_on_kstreak(id){
+	if(UserData[id][kills]=>3){
+	return 1
+	}else return 0
 }
