@@ -1,21 +1,22 @@
 #include < amxmodx >
 #include < csx >
 #include < dhudmessage >
+#pragma tabsize 0
 #define ver "build-1.0-stable"
 
 //	Includes skills and menus for each class
 #include "dota_base/plugin_init.h"
+#include "dota_base/precache.inl"
 
 /*
 		Plugin init stage!
  */
 public plugin_init(){
-	register_plugin("Dota Mod+", ver, "harmony");
+	register_plugin("Dota Mod+", ver, "unknown");
 	register_dictionary("dota_plus.txt")
 	register_event("DeathMsg","func_player_dead","a");
 	set_task(1.0,"render_info",0,_,_, "b")
 	register_event("HLTV", "new_round", "a", "1=0", "2=0");
-	register_clcmd("upgr_menu_sniper", "cmdmenu", -1)
 }
 
 public func_player_dead(id){
@@ -24,12 +25,12 @@ public func_player_dead(id){
 	if(!is_user_connected(killer))
 		return PLUGIN_HANDLED
 	victim = read_data(2)
+	if(killer != victim && is_user_connected(killer) && is_user_connected(victim)){
 	UserData[killer][exp]++
 	UserData[killer][kills]++
 	UserData[victim][kills]=0
-	on_streak[victim]=false
 	get_user_name(killer, name_killer, 32)
-	if(first_blood == 0 && UserData[id][kills]=>3){
+	if(first_blood == 0 && UserData[killer][kills]<=3){
 		UserData[killer][exp]++
 		set_dhudmessage(212, 0, 0, -1.0, 0.25, 0, 6.0, 3.0, 0.2, 1.0)
 		show_hudmessage(0, "%L", LANG_PLAYER, "DOTA_FIRST_BLOOD", name_killer)
@@ -38,7 +39,6 @@ public func_player_dead(id){
 	}
 	switch(UserData[killer][kills]){
 	case 3:{
-		on_streak[killer]=true
 		UserData[killer][exp]+=2
 		set_dhudmessage(233, 247, 149, -1.0, 0.25, 0, 6.0, 3.0, 0.2, 1.0);
 		show_dhudmessage(0, "%L", LANG_PLAYER, "DOTA_KILLINGSPREE", name_killer);
@@ -90,17 +90,16 @@ public func_player_dead(id){
 
 	checklvl(victim)
 	checklvl(killer)
+	}
 	return PLUGIN_HANDLED
 }
-
 public client_putinserver(id){
-	if(is_user_connected(id))
+	UserData[id] = UserData[0];
 	UserData[id][exp] = 0;
 	UserData[id][gLevel] = 1;
-	}
 }
 
-public new_round(){
+public new_round(id){
 	first_blood=0
 }
 
@@ -153,7 +152,7 @@ public native_is_first_blood(id){
 	return first_blood
 }
 public native_is_on_kstreak(id){
-	if(UserData[id][kills]=>3){
-	return 1
-	}else return 0
+	if(UserData[id][kills]<=3)
+		return 1
+	return 0
 }
