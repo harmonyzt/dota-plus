@@ -15,7 +15,7 @@ public plugin_init(){
 	register_plugin("Dota Mod+", ver, "unknown");
 	register_dictionary("dota_plus.txt")
 	register_event("DeathMsg","func_player_dead","a");
-	set_task(1.0,"render_info",0,_,_, "b")
+	//set_task(1.0,"render_info",0,_,_, "b")
 	register_event("HLTV", "new_round", "a", "1=0", "2=0");
 }
 
@@ -99,7 +99,7 @@ public client_putinserver(id){
 	UserData[id][gLevel] = 1;
 }
 
-public new_round(id){
+public new_round(){
 	first_blood=0
 }
 
