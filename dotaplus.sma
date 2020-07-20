@@ -1,7 +1,7 @@
 #include < amxmodx >
 #include < csx >
 #include < dhudmessage >
-#define ver "build-1.1-moreStable"
+#define ver "1.1stable"
 
 //	Includes skills and menus for each class
 #include "dota_base/plugin_init.h"
