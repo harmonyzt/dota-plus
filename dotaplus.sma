@@ -1,7 +1,6 @@
 #include < amxmodx >
 #include < csx >
 #include < dhudmessage >
-#pragma tabsize 0
 #define ver "build-1.0-stable"
 
 //	Includes skills and menus for each class
@@ -15,7 +14,7 @@ public plugin_init(){
 	register_plugin("Dota Mod+", ver, "unknown");
 	register_dictionary("dota_plus.txt")
 	register_event("DeathMsg","func_player_dead","a");
-	//set_task(1.0,"render_info",0,_,_, "b")
+	set_task(1.0,"render_info",_,_,_, "b")
 	register_event("HLTV", "new_round", "a", "1=0", "2=0");
 }
 
@@ -113,12 +112,9 @@ public checklvl(id){
 
 public render_info(){
 	for(new id = 1; id <= 32; id++){
-		if(!is_user_bot(id) && is_user_connected(id) && levels[UserData[id][gLevel]]<=30){
+		if(!is_user_bot(id) && is_user_connected(id)){ //&& levels[UserData[id][gLevel]]<=30
 			set_dhudmessage(183, 174, 37, 0.01, 0.15, 0, 6.0, 1.0)
 			show_dhudmessage(id, "%L", LANG_PLAYER, "DOTA_STATUS",UserData[id][exp],levels[UserData[id][gLevel]],UserData[id][gLevel])
-			}else{
-			set_dhudmessage(183, 174, 37, 0.01, 0.15, 0, 6.0, 1.0)
-			show_dhudmessage(id, "%L", LANG_PLAYER, "DOTA_MAXLVL")
 			}
 	}
 }
@@ -132,7 +128,7 @@ public plugin_natives(){
 	register_native("is_first_blood", "native_is_first_blood", 1);
 	register_native("is_on_kstreak", "native_is_on_kstreak", 1);
 }
-// Natives!
+// Natives
 public native_get_user_skillpoints(id){
 	return UserData[id][skillpoint]
 }
