@@ -8,7 +8,8 @@
 #include "dota_base/precache.inl"
 
 /*
-		Plugin init stage!
+		Plugin init stage
+		
  */
 public plugin_init(){
 	register_plugin("Dota Mod+", ver, "harmony");
