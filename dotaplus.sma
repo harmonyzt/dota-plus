@@ -1,6 +1,7 @@
 #include < amxmodx >
 #include < csx >
 #include < dhudmessage >
+#include < csdm >
 #define ver "1.2"
 
 //	Includes skills and menus for each class
@@ -9,7 +10,7 @@
 
 /*
 		Plugin init stage
-		
+		News and cvars are going to plugin_init.h
  */
 public plugin_init(){
 	register_plugin("Dota Mod+", ver, "harmony");
@@ -100,6 +101,7 @@ public client_putinserver(id){
 }
 
 public new_round(){
+	csdm_set_active(on);
 	first_blood=0
 }
 
