@@ -1,7 +1,7 @@
 #include < amxmodx >
 #include < csx >
 #include < dhudmessage >
-#define ver "1.1stable"
+#define ver "1.2"
 
 //	Includes skills and menus for each class
 #include "dota_base/plugin_init.h"
@@ -112,7 +112,7 @@ public checklvl(id){
 
 public render_info(){
 	for(new id = 1; id <= 32; id++){
-		if(!is_user_bot(id) && is_user_connected(id)){ //&& levels[UserData[id][gLevel]]<=30
+		if(!is_user_bot(id) && is_user_connected(id)){
 			set_dhudmessage(183, 174, 37, 0.01, 0.15, 0, 6.0, 1.0)
 			show_dhudmessage(id, "%L", LANG_PLAYER, "DOTA_STATUS",UserData[id][exp],levels[UserData[id][gLevel]],UserData[id][gLevel])
 			}
