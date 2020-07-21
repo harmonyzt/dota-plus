@@ -11,7 +11,7 @@
 		Plugin init stage!
  */
 public plugin_init(){
-	register_plugin("Dota Mod+", ver, "unknown");
+	register_plugin("Dota Mod+", ver, "harmony");
 	register_dictionary("dota_plus.txt")
 	register_event("DeathMsg","func_player_dead","a");
 	set_task(1.0,"render_info",_,_,_, "b")
