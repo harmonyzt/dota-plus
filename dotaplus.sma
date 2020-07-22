@@ -101,6 +101,8 @@ public client_putinserver(id){
 }
 
 public new_round(){
+	// Activating csdm and letting players play without any restrictions or classes
+	// TODO: Menu with starting queue or declining it
 	csdm_set_active(on);
 	first_blood=0
 }
@@ -112,7 +114,8 @@ public checklvl(id){
 		UserData[id][exp] = 0
 	}
 }
-
+// Renders your lvl/exp on your screen
+// TODO: Displaying current status of the game 
 public render_info(){
 	for(new id = 1; id <= 32; id++){
 		if(!is_user_bot(id) && is_user_connected(id)){
