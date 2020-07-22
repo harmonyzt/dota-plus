@@ -12,13 +12,6 @@
 		Plugin init stage
 		News and cvars are going to plugin_init.h
  */
-public plugin_init(){
-	register_plugin("Dota Mod+", ver, "harmony");
-	register_dictionary("dota_plus.txt")
-	register_event("DeathMsg","func_player_dead","a");
-	set_task(1.0,"render_info",_,_,_, "b")
-	register_event("HLTV", "new_round", "a", "1=0", "2=0");
-}
 
 public func_player_dead(id){
 	static killer, victim;
@@ -103,7 +96,7 @@ public client_putinserver(id){
 public new_round(){
 	// Activating csdm and letting players play without any restrictions or classes
 	// TODO: Menu with starting queue or declining it
-	csdm_set_active(on);
+	csdm_set_active(1);
 	first_blood=0
 }
 
@@ -123,6 +116,8 @@ public render_info(){
 			show_dhudmessage(id, "%L", LANG_PLAYER, "DOTA_STATUS",UserData[id][exp],levels[UserData[id][gLevel]],UserData[id][gLevel])
 			}
 	}
+	set_hudmessage(127, 170, 255, -1.0, 0.0, 0, 6.0, 1.0)
+	ShowSyncHudMsg(0, syncGameStatus, "%L",LANG_PLAYER,"")
 }
 
 public plugin_natives(){
