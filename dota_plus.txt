@@ -22,6 +22,12 @@ DOTA_SKILL_SNIPER_3 = \wРазрывной патрон
 DOTA_SKILL_SNIPER_ULT = \rВыстрел на удачу
 // Конец
 
+DOTA_SEARCHING = Поиск - Обычный матч...
+DOTA_INGAME_MATCH = В обычной игре
+DOTA_SEARCHING_COMP = Поиск - Соревновательный режим...
+DOTA_INGAME_COMP = В соревновательной игре
+DOTA_CSDM = В дедматче
+
 [en]
 DOTA_FIRST_BLOOD = %s drew first blood!
 DOTA_KILLINGSPREE = %s is on a killing spree
@@ -34,3 +40,10 @@ DOTA_GODLIKE = %s is GODLIKE
 DOTA_BEYONDGODLIKE = %s is beyond GODLIKE, someone kill them!!
 DOTA_STATUS = XP : [%d/%d] ^nLevel: [%d]
 DOTA_MAXLVL = XP: [MAX] ^nLevel:[30]
+
+// Game status hud 
+DOTA_SEARCHING = Searching a match...
+DOTA_INGAME_MATCH = In a default match
+DOTA_SEARCHING_COMP = Searching a comp...
+DOTA_INGAME_COMP = In a competitive match
+DOTA_CSDM = In a deathmatch
