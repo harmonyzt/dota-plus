@@ -47,3 +47,8 @@ DOTA_INGAME_MATCH = In a default match
 DOTA_SEARCHING_COMP = Searching a comp...
 DOTA_INGAME_COMP = In a competitive match
 DOTA_CSDM = In a deathmatch
+
+MAINMENU_TITLE = \rDota Plus Main Menu
+MAINMENU_START_SEARCH = Start search
+MAINMENU_SETTINGS = Settings
+MAINMENU_EXIT = Exit
