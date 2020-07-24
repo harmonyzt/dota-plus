@@ -153,3 +153,44 @@ public native_is_on_kstreak(id){
 		return 1
 	return 0
 }
+
+public DOTA_MAIN_MENU(id){
+	static main_menu[700]
+	new Text[1024]
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"MAINMENU_TITLE", )
+	new menu = menu_create(main_menu, "func_anew_menu")
+
+		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_START_SEARCH",);
+		menu_additem(menu, Text,"1")
+
+		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_SETTINGS",);
+		menu_additem(menu, Text,"2")
+		//menu_additem
+		menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
+		menu_display(id,menu,0)
+		
+		return PLUGIN_HANDLED
+}
+
+public func_MAIN_MENU(id, menu, item){
+	if( item == MENU_EXIT ){
+		menu_destroy( menu );
+		return PLUGIN_HANDLED;
+	}
+
+	new data[6], iName[64];
+	new access, callback;
+     
+	menu_item_getinfo( menu, item, access, data,5, iName, 63, callback );
+	new key = str_to_num( data );
+	switch( key ){
+		case 1:{
+			}
+		case 2:{
+			}
+		case 3:{
+			}
+		//case add
+		}
+	 return PLUGIN_HANDLED
+}
