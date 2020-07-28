@@ -4,14 +4,9 @@
 #include < csdm >
 #define ver "1.2"
 
-//	Includes skills and menus for each class
+//	Includes skills and menus, each class
 #include "dota_base/plugin_init.h"
 #include "dota_base/precache.inl"
-
-/*
-		Plugin init stage
-		News and cvars are going to plugin_init.h
- */
 
 public func_player_dead(id){
 	static killer, victim;
