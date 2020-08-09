@@ -1,5 +1,4 @@
 #include < dotaplus >
-
 public upgr_menu_sniper(id){
     static menitem[64]
     formatex(menitem, 63, "%L", LANG_PLAYER, "DOTA_MENU_TITLE", UserData[id][skillpoint]);
