@@ -180,12 +180,44 @@ public func_MAIN_MENU(id, menu, item){
 	new key = str_to_num( data );
 	switch( key ){
 		case 1:{
+			StartSearch(id)
+			client_cmd(id, "")
 			}
 		case 2:{
-			}
-		case 3:{
+			MenuSettings(id)
 			}
 		//case add
 		}
 	 return PLUGIN_HANDLED
+}
+
+/*
+
+This is a menus which will be used in menu above
+
+*/
+public StartSearch(id){
+	static main_menu[700]
+	new Text[1024]
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"MAINMENU_TITLE", )
+	new menu = menu_create(main_menu, "func_anew_menu")
+
+		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_START_SEARCH",);
+		menu_additem(menu, Text,"1")
+
+		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_SETTINGS",);
+		menu_additem(menu, Text,"2")
+		//menu_additem
+		menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
+		menu_display(id,menu,0)
+		
+		return PLUGIN_HANDLED
+}
+
+public MenuSettings(id){
+
+}
+
+public AdminSettings(id){
+
 }
