@@ -13,14 +13,15 @@ enum _:Classes
 {
     sniper
 };
+
 new syncGameStatus
 
 public plugin_init(){
 	register_plugin("Dota Mod+", ver, "harmony");
-	register_dictionary("dota_plus.txt")
+	register_dictionary("dota_plus.txt");
 	register_event("DeathMsg","func_player_dead","a");
 	set_task(1.0,"render_info",_,_,_, "b")
 	register_event("HLTV", "new_round", "a", "1=0", "2=0");
-	syncGameStatus = CreateHudSyncObj()
+	syncGameStatus = CreateHudSyncObj();
 	register_clcmd("say /main","DOTA_MAIN_MENU");
 }
