@@ -112,7 +112,7 @@ public render_info(){
 			}
 	}
 	set_hudmessage(127, 170, 255, -1.0, 0.0, 0, 6.0, 1.0)
-	ShowSyncHudMsg(0, syncGameStatus, "%L",LANG_PLAYER,"")
+	ShowSyncHudMsg(0, syncGameStatus, "%L",LANG_PLAYER,"GAMESTATUS")
 }
 
 public plugin_natives(){
@@ -152,13 +152,13 @@ public native_is_on_kstreak(id){
 public DOTA_MAIN_MENU(id){
 	static main_menu[700]
 	new Text[1024]
-	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"MAINMENU_TITLE", )
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"MAINMENU_TITLE")
 	new menu = menu_create(main_menu, "func_anew_menu")
 
-		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_START_SEARCH",);
+		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_START_SEARCH");
 		menu_additem(menu, Text,"1")
 
-		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_SETTINGS",);
+		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_SETTINGS");
 		menu_additem(menu, Text,"2")
 		//menu_additem
 		menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
@@ -181,7 +181,6 @@ public func_MAIN_MENU(id, menu, item){
 	switch( key ){
 		case 1:{
 			StartSearch(id)
-			client_cmd(id, "")
 			}
 		case 2:{
 			MenuSettings(id)
@@ -199,14 +198,14 @@ This is a menus which will be used in menu above
 public StartSearch(id){
 	static main_menu[700]
 	new Text[1024]
-	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"MAINMENU_TITLE", )
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_TITLE")
 	new menu = menu_create(main_menu, "func_anew_menu")
 
-		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_START_SEARCH",);
+		formatex(Text, charsmax(Text), "%L", id, "SEARCHMENU_STARTCASUAL");
 		menu_additem(menu, Text,"1")
 
-		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_SETTINGS",);
-		menu_additem(menu, Text,"2")
+		formatex(Text, charsmax(Text), "%L", id, "SEARCHMENU_STARTCOMP");
+		menu_additem(menu, Text,"1")
 		//menu_additem
 		menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
 		menu_display(id,menu,0)
@@ -214,10 +213,136 @@ public StartSearch(id){
 		return PLUGIN_HANDLED
 }
 
+public func_StartSearch(id, menu, item){
+	if( item == MENU_EXIT ){
+		menu_destroy( menu );
+		return PLUGIN_HANDLED;
+	}
+
+	new data[6], iName[64];
+	new access, callback;
+     
+	menu_item_getinfo( menu, item, access, data,5, iName, 63, callback );
+	new key = str_to_num( data );
+	switch( key ){
+		case 1:{
+			StartCasual(id)
+			}
+		case 2:{
+			StartComp(id)
+			}
+		//case add
+		}
+	 return PLUGIN_HANDLED
+}
+
+StartCasual(id){
+	static main_menu[700]
+	new Text[1024]
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_CASUAL_SEARCHING",)
+	new menu = menu_create(main_menu, "func_anew_menu")
+		
+		return PLUGIN_HANDLED
+}
+
+StartComp(id){
+	static main_menu[700]
+	new Text[1024]
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_COMP_SEARCHING")
+	new menu = menu_create(main_menu, "func_anew_menu")
+		
+		return PLUGIN_HANDLED
+}
+/*
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+*/
+
+
 public MenuSettings(id){
 
 }
 
 public AdminSettings(id){
+	static main_menu[700]
+	new Text[1024]
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"ADMINMENU_TITLE")
+	new menu = menu_create(main_menu, "func_anew_menu")
 
+		formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_CASUAL");
+		menu_additem(menu, Text,"1")
+
+		formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_COMP");
+		menu_additem(menu, Text,"2")
+
+		formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_BAN");
+		menu_additem(menu, Text,"3")
+
+		formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_KICK");
+		menu_additem(menu, Text,"4")
+
+		menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
+		menu_display(id,menu,0)
+		
+		return PLUGIN_HANDLED
 }
+
+public func_AdminSettings(id){
+	if( item == MENU_EXIT ){
+		menu_destroy( menu );
+		return PLUGIN_HANDLED;
+	}
+
+	new data[6], iName[64];
+	new access, callback;
+     
+	menu_item_getinfo( menu, item, access, data,5, iName, 63, callback );
+	new key = str_to_num( data );
+	switch( key ){
+		case 1:{
+			ChangeToCasual(id)
+			}
+		case 2:{
+			ChangeToComp(id)
+			}
+		case 3:{
+			//Ban player
+			}
+		case 4:{
+			//Kick
+			}
+		}
+	 return PLUGIN_HANDLED
+}
+
+
+/*
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////       Functions to force switching to a gamemode        /////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+ChangeToCasual(id){
+	server_cmd("pb removebots");
+	server_cmd("mp_winlimit 0");
+	server_cmd("mp_roundtime 5");
+	server_cmd("mp_freezetime 2");
+	server_cmd("sv_restart 1");
+	server_cmd("pb fillserver %s", random_num(1,100));
+}
+
+ChangeToComp(id){
+	server_cmd("pb removebots");
+	server_cmd("mp_winlimit 16");
+	server_cmd("mp_roundtime 3");
+	server_cmd("mp_freezetime 10");
+	server_cmd("sv_restart 1");
+	server_cmd("pb fillserver %s", random_num(50,100));
+}
+
+
+
+
+
