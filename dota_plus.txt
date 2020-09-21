@@ -15,6 +15,7 @@ DOTA_MAXLVL = Опыт: [MAX] ^nУровень:[30]
 DOTA_MENU_TITLE = \rМеню навыков^n Скиллпоинты - [%d]
 DOTA_MENU_EXIT = Выход
 
+
 // Навыки снайпера
 DOTA_SKILL_SNIPER_1 = \wБыстрый Курок
 DOTA_SKILL_SNIPER_2 = \wМеткость
@@ -22,11 +23,30 @@ DOTA_SKILL_SNIPER_3 = \wРазрывной патрон
 DOTA_SKILL_SNIPER_ULT = \rВыстрел на удачу
 // Конец
 
-DOTA_SEARCHING = Поиск - Обычный матч...
-DOTA_INGAME_MATCH = В обычной игре
-DOTA_SEARCHING_COMP = Поиск - Соревновательный режим...
+//Поиск режима
+SEARCHMENU_TITLE = [Поиск] Выберете режим
+SEARCHMENU_STARTCASUAL = Обычный матч
+SEARCHMENU_STARTCOMP = Соревновательный режим
+
+SEARCHMENU_CASUAL_SEARCHING = Поиск - Обычный матч...
+SEARCHMENU_COMP_SEARCHING = Поиск - Соревновательный режим...
+
+DOTA_INGAME_CASUAL = В обычной игре
 DOTA_INGAME_COMP = В соревновательной игре
-DOTA_CSDM = В дедматче
+//Меню
+MAINMENU_TITLE = \rДота Плюс Главное Меню
+MAINMENU_START_SEARCH = Начать поиск
+MAINMENU_SETTINGS = Настройки
+MAINMENU_EXIT = Выход
+
+// Меню админа
+ADMINMENU_TITLE = Меню админа
+ADMINMENU_CASUAL = Включить режим "Обычный"
+ADMINMENU_COMP = Включить режим "Соревновательный"
+ADMINMENU_BAN = Забанить игрока
+ADMINMENU_KICK = Выгнать игрока
+
+GAMESTATUS = Режим:
 
 [en]
 DOTA_FIRST_BLOOD = %s drew first blood!
