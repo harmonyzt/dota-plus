@@ -1,0 +1,707 @@
+date/time         : 2020-09-22, 13:05:26, 422ms
+computer name     : HARMONY-DESKTOP
+user name         : harmony
+operating system  : Windows NT New Service Pack 1 build 7601
+system language   : English
+system up time    : 1 day 3 hours
+program up time   : 259 milliseconds
+processors        : 4x Intel(R) Core(TM)2 Quad CPU Q9400 @ 2.66GHz
+physical memory   : 1683/6143 MB (free/total)
+free disk space   : (C:) 397.84 GB
+display mode      : 1600x900, 32 bit
+process id        : $1748
+allocated memory  : 27.47 MB
+executable        : AMXX_Studio.exe
+exec. date/time   : 2006-12-19 16:34
+version           : 1.4.3.3
+madExcept version : 3.0b
+callstack crc     : $02e918a1, $8960e06b, $8960e06b
+exception number  : 1
+exception class   : EFOpenError
+exception message : Datei C:\Users\harmony\Desktop\dota+\dota-plus\compile\config\ACList.cfg kann nicht geöffnet werden. The system cannot find the path specified.
+
+main thread ($65c):
+00468b61 +109 AMXX_Studio.exe Classes              TFileStream.Create
+00468a34 +020 AMXX_Studio.exe Classes              TFileStream.Create
+00677f68 +01c AMXX_Studio.exe UnitACCheck   91  +2 TJsCollection.LoadFromFile
+0068d41a +0ca AMXX_Studio.exe UnitfrmMain 2925  +8 TfrmMain.FormCreate
+004d4bed +031 AMXX_Studio.exe Forms                TCustomForm.DoCreate
+004d48cd +011 AMXX_Studio.exe Forms                TCustomForm.AfterConstruction
+004041db +007 AMXX_Studio.exe System               @AfterConstruction
+004d48a4 +174 AMXX_Studio.exe Forms                TCustomForm.Create
+004dc249 +031 AMXX_Studio.exe Forms                TApplication.CreateForm
+0068ebe6 +0ce AMXX_Studio.exe AMXX_Studio   74 +12 initialization
+7625344b +010 kernel32.dll                         BaseThreadInitThunk
+
+modules:
+00400000 AMXX_Studio.exe 1.4.3.3          C:\Users\harmony\Desktop\dota+\dota-plus\compile
+10000000 scilexer.dll    1.6.6.0          C:\Users\harmony\Desktop\dota+\dota-plus\compile
+65050000 comctl32.dll    5.82.7601.18837  C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.18837_none_ec86b8d6858ec0bc
+71630000 winspool.drv    6.1.7601.17514   C:\Windows\system32
+71fa0000 olepro32.dll    6.1.7601.17514   C:\Windows\system32
+720b0000 comctl32.DLL    6.10.7601.18837  C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d
+72250000 uxtheme.dll     6.1.7600.16385   C:\Windows\system32
+724a0000 winmm.dll       6.1.7601.17514   C:\Windows\system32
+724e0000 dwmapi.dll      6.1.7600.16385   C:\Windows\system32
+72500000 msimg32.dll     6.1.7600.16385   C:\Windows\system32
+72510000 version.dll     6.1.7600.16385   C:\Windows\system32
+73de0000 wsock32.dll     6.1.7600.16385   C:\Windows\system32
+74f30000 CRYPTBASE.dll   6.1.7601.24384   C:\Windows\syswow64
+74f40000 SspiCli.dll     6.1.7601.24384   C:\Windows\syswow64
+75210000 MSCTF.dll       6.1.7601.23915   C:\Windows\syswow64
+752e0000 LPK.dll         6.1.7601.23930   C:\Windows\syswow64
+752f0000 GDI32.dll       6.1.7601.23914   C:\Windows\syswow64
+75570000 sechost.dll     6.1.7600.16385   C:\Windows\SysWOW64
+755b0000 SHELL32.dll     6.1.7601.23893   C:\Windows\syswow64
+76200000 WS2_32.dll      6.1.7601.23451   C:\Windows\syswow64
+76240000 kernel32.dll    6.1.7601.24384   C:\Windows\syswow64
+76360000 oleaut32.dll    6.1.7601.23775   C:\Windows\syswow64
+76400000 SHLWAPI.dll     6.1.7601.17514   C:\Windows\syswow64
+76610000 imm32.dll       6.1.7601.17514   C:\Windows\syswow64
+76670000 comdlg32.dll    6.1.7601.17514   C:\Windows\syswow64
+766f0000 RPCRT4.dll      6.1.7601.24384   C:\Windows\syswow64
+767f0000 ole32.dll       6.1.7601.23889   C:\Windows\syswow64
+76950000 KERNELBASE.dll  6.1.7601.24384   C:\Windows\syswow64
+76b30000 msvcrt.dll      7.0.7601.17744   C:\Windows\syswow64
+76c10000 USP10.dll       1.626.7601.23894 C:\Windows\syswow64
+76cb0000 advapi32.dll    6.1.7601.24384   C:\Windows\syswow64
+76d60000 NSI.dll         6.1.7601.23889   C:\Windows\syswow64
+770b0000 USER32.dll      6.1.7601.23594   C:\Windows\syswow64
+775d0000 ntdll.dll       6.1.7601.24384   C:\Windows\SysWOW64
+
+processes:
+0000 Idle                                0
+0004 System                              0
+0114 smss.exe                            0
+0198 csrss.exe                           0
+01d0 wininit.exe                         0
+01e0 csrss.exe                           1
+0208 services.exe                        0
+0224 lsass.exe                           0
+022c lsm.exe                             0
+0284 winlogon.exe                        1
+02c0 svchost.exe                         0
+02fc NVDisplay.Container.exe             0
+0330 svchost.exe                         0
+03a4 svchost.exe                         0
+03c4 svchost.exe                         0
+03f0 svchost.exe                         0
+0100 svchost.exe                         0
+042c svchost.exe                         0
+0488 NVDisplay.Container.exe             1
+0500 spoolsv.exe                         0
+053c svchost.exe                         0
+05f4 svchost.exe                         0
+0618 svchost.exe                         0
+0644 pservice.exe                        0
+0680 svchost.exe                         0
+06a8 Lavasoft.WCAssistant.WinService.exe 0
+0760 taskhost.exe                        1 normal
+079c dwm.exe                             1 high
+07f4 explorer.exe                        1 normal
+0588 WindscribeService.exe               0
+08c4 Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+08e4 PreMiD.exe                          1 normal
+0a74 WmiPrvSE.exe                        0
+0aa8 ShareX.exe                          1 normal
+0bec Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0844 Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0a54 SearchIndexer.exe                   0
+0c7c svchost.exe                         0
+0ecc HourBoostr.exe                      1 normal
+0f10 wmpnetwk.exe                        0
+0fc8 conhost.exe                         1 normal
+0d64 Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0e94 Discord.exe                         1 idle         C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0e78 svchost.exe                         0
+10bc PreMiD.exe                          1 normal
+11ac PreMiD.exe                          1 above normal
+05e4 PreMiD.exe                          1 normal
+0f78 Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0dec sppsvc.exe                          0
+1444 svchost.exe                         0
+14ec PresentationFontCache.exe           0
+1f78 taskhost.exe                        1
+1174 steam.exe                           1
+0fa8 steamwebhelper.exe                  1
+1d0c steamwebhelper.exe                  1
+07dc steamwebhelper.exe                  1 normal
+09a8 steamwebhelper.exe                  1
+139c steamwebhelper.exe                  1 idle
+0bc4 steamwebhelper.exe                  1 above normal
+0e64 firefox.exe                         1 normal
+09d8 firefox.exe                         1 normal
+0a80 firefox.exe                         1 normal
+1c68 firefox.exe                         1 normal
+1f7c firefox.exe                         1 idle
+1a98 firefox.exe                         1 idle
+1cac steamwebhelper.exe                  1 idle
+0184 audiodg.exe                         0
+1a50 firefox.exe                         1 normal
+15f0 Code.exe                            1 normal
+1d64 Code.exe                            1 normal
+0bd0 Code.exe                            1 above normal
+1148 Code.exe                            1 normal
+114c Code.exe                            1 normal
+0650 Code.exe                            1 normal
+1bd4 SearchProtocolHost.exe              0
+11e4 Code.exe                            1 normal
+1f4c Code.exe                            1 normal
+0da8 CodeHelper.exe                      1 normal       c:\Users\harmony\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\platform\files\node\watcher\win32
+06c8 conhost.exe                         1 normal
+1788 cpptools.exe                        1 normal       c:\Users\harmony\.vscode\extensions\ms-vscode.cpptools-1.0.0\bin
+1f88 conhost.exe                         1 normal
+0b10 conhost.exe                         1 normal
+1258 vsls-agent.exe                      1 normal       c:\Users\harmony\.vscode\extensions\ms-vsliveshare.vsliveshare-1.0.2740\dotnet_modules
+1560 Code.exe                            1 normal
+1b78 Spotify.exe                         1 normal       C:\Users\harmony\AppData\Roaming\Spotify
+16e4 Spotify.exe                         1 normal       C:\Users\harmony\AppData\Roaming\Spotify
+0778 Spotify.exe                         1 above normal C:\Users\harmony\AppData\Roaming\Spotify
+171c Spotify.exe                         1 normal       C:\Users\harmony\AppData\Roaming\Spotify
+1c78 Spotify.exe                         1 idle         C:\Users\harmony\AppData\Roaming\Spotify
+15c4 SearchFilterHost.exe                0
+1748 AMXX_Studio.exe                     1 normal       C:\Users\harmony\Desktop\dota+\dota-plus\compile
+
+hardware:
++ Batteries
+  - Microsoft Composite Battery
++ Computer
+  - ACPI x64-based PC
++ Disk drives
+  - SAMSUNG HD322GJ ATA Device
+  - ST3500418AS ATA Device
+  - ST3500418AS ATA Device
++ Display adapters
+  - NVIDIA GeForce GTX 750 (driver 26.21.14.3086)
++ Floppy disk drives
+  - Floppy disk drive
++ Floppy drive controllers
+  - Standard floppy disk controller
++ Human Interface Devices
+  - HID-compliant consumer control device
+  - HID-compliant consumer control device
+  - HID-compliant device
+  - HID-compliant device
+  - HID-compliant device
+  - HID-compliant device
+  - USB Input Device
+  - USB Input Device
+  - USB Input Device
+  - USB Input Device
+  - USB Input Device
++ IDE ATA/ATAPI controllers
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 1
+  - ATA Channel 1
+  - ATA Channel 1
+  - Standard Dual Channel PCI IDE Controller
+  - Standard Dual Channel PCI IDE Controller
+  - Standard Dual Channel PCI IDE Controller
++ Keyboards
+  - HID Keyboard Device
+  - HID Keyboard Device
+  - HID Keyboard Device
+  - HID Keyboard Device
+  - HID Keyboard Device
+  - HID Keyboard Device
++ Mice and other pointing devices
+  - HID-compliant mouse
++ Monitors
+  - Generic PnP Monitor
++ Network adapters
+  - Realtek RTL8168C(P)/8111C(P) Family PCI-E Gigabit Ethernet NIC (NDIS 6.20)
+  - Windscribe VPN (driver 9.0.0.21)
++ Ports (COM & LPT)
+  - Communications Port (COM1)
++ Processors
+  - Intel(R) Core(TM)2 Quad CPU    Q9400  @ 2.66GHz
+  - Intel(R) Core(TM)2 Quad CPU    Q9400  @ 2.66GHz
+  - Intel(R) Core(TM)2 Quad CPU    Q9400  @ 2.66GHz
+  - Intel(R) Core(TM)2 Quad CPU    Q9400  @ 2.66GHz
++ Sound, video and game controllers
+  - High Definition Audio Device
+  - NVIDIA High Definition Audio (driver 1.3.38.16)
++ Storage volume shadow copies
+  - Generic volume shadow copy
+  - Generic volume shadow copy
+  - Generic volume shadow copy
+  - Generic volume shadow copy
+  - Generic volume shadow copy
++ System devices
+  - ACPI Fixed Feature Button
+  - ACPI Power Button
+  - Composite Bus Enumerator
+  - Direct memory access controller
+  - File as Volume Driver
+  - High Definition Audio Controller
+  - High Definition Audio Controller
+  - High precision event timer
+  - Intel(R) 4 Series Chipset PCI Express Root Port - 2E21
+  - Intel(R) 4 Series Chipset Processor to I/O Controller - 2E20
+  - Intel(R) 82801 PCI Bridge - 244E
+  - Intel(R) 82802 Firmware Hub Device
+  - Intel(R) ICH10 Family PCI Express Root Port 1 - 3A40
+  - Intel(R) ICH10 Family PCI Express Root Port 5 - 3A48
+  - Intel(R) ICH10 Family PCI Express Root Port 6 - 3A4A
+  - Intel(R) ICH10 Family SMBus Controller - 3A30
+  - Intel(R) ICH10 LPC Interface Controller - 3A18
+  - Microsoft ACPI-Compliant System
+  - Microsoft System Management BIOS Driver
+  - Microsoft Virtual Drive Enumerator Driver
+  - Motherboard resources
+  - Motherboard resources
+  - Motherboard resources
+  - Motherboard resources
+  - Motherboard resources
+  - Numeric data processor
+  - PCI bus
+  - Plug and Play Software Device Enumerator
+  - Programmable interrupt controller
+  - Remote Desktop Device Redirector Bus
+  - System board
+  - System board
+  - System CMOS/real time clock
+  - System speaker
+  - System timer
+  - Terminal Server Keyboard Driver
+  - Terminal Server Mouse Driver
+  - UMBus Enumerator
+  - UMBus Root Bus Enumerator
+  - Volume Manager
++ Universal Serial Bus controllers
+  - Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3A
+  - Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3C
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A34
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A35
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A36
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A37
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A38
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A39
+  - USB Composite Device
+  - USB Composite Device
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+
+cpu registers:
+eax = 020580dc
+ebx = 020246d4
+ecx = 00000000
+edx = 00468b66
+esi = 0202cb98
+edi = 02020000
+eip = 00468b66
+esp = 0018fc94
+ebp = 0018fd00
+
+stack dump:
+0018fc94  66 8b 46 00 de fa ed 0e - 01 00 00 00 07 00 00 00  f.F.............
+0018fca4  a8 fc 18 00 66 8b 46 00 - dc 80 05 02 d4 46 02 02  ....f.F......F..
+0018fcb4  98 cb 02 02 00 00 02 02 - 00 fd 18 00 c4 fc 18 00  ................
+0018fcc4  10 fd 18 00 dc 45 40 00 - 00 fd 18 00 48 f9 67 00  .....E@.....H.g.
+0018fcd4  d4 46 02 02 01 cb 02 02 - 00 00 00 00 00 00 00 00  .F..............
+0018fce4  00 00 00 00 00 00 00 00 - 90 ed 02 02 0b 35 46 00  .............5F.
+0018fcf4  70 af 03 02 0b d8 02 02 - 86 41 40 00 28 fd 18 00  p........A@.(...
+0018fd04  39 8a 46 00 00 00 00 00 - 00 00 02 02 48 fd 18 00  9.F.........H...
+0018fd14  1b 47 40 00 28 fd 18 00 - d4 46 02 02 98 cb 02 02  .G@.(....F......
+0018fd24  f4 d8 02 02 40 fd 18 00 - 6d 7f 67 00 00 00 00 00  ....@...m.g.....
+0018fd34  e8 f4 53 00 d4 7b 02 02 - 00 00 00 00 68 fd 18 00  ..S..{......h...
+0018fd44  1f d4 68 00 70 fd 18 00 - dc 45 40 00 68 fd 18 00  ..h.p....E@.h...
+0018fd54  8c 21 02 02 d4 7b 02 02 - 00 00 00 00 00 00 00 00  .!...{..........
+0018fd64  00 00 00 00 8c fd 18 00 - f3 4b 4d 00 a8 fd 18 00  .........KM.....
+0018fd74  fc 43 40 00 8c fd 18 00 - 48 f9 67 00 8c 21 02 02  .C@.....H.g..!..
+0018fd84  d4 7b 02 02 d4 7b 02 02 - d0 fe 18 00 d3 48 4d 00  .{...{.......HM.
+0018fd94  8c 21 02 02 d4 7b 02 02 - de 41 40 00 48 f9 67 00  .!...{...A@.H.g.
+0018fda4  a9 48 4d 00 d8 fe 18 00 - a5 41 40 00 d0 fe 18 00  .HM......A@.....
+0018fdb4  d4 7b 02 02 d4 7b 02 02 - 00 00 00 00 fa 62 0c 77  .{...{.......b.w
+0018fdc4  52 16 0a 00 0c 00 00 00 - 00 00 00 00 02 fb 5e 77  R.............^w
+
+disassembling:
+[...]
+00677f51      push    esi
+00677f52      mov     esi, edx
+00677f54      mov     ebx, eax
+00677f56 90   mov     eax, ebx
+00677f58      call    -$2117a9 ($4667b4)     ; Classes.TCollection.Clear
+00677f58
+00677f5d 91   push    0
+00677f5f      mov     ecx, esi
+00677f61      mov     dl, 1
+00677f63      mov     eax, [$463524]
+00677f68    > call    -$20f559 ($468a14)     ; Classes.TFileStream.Create
+00677f68
+00677f6d      mov     [ebp-4], eax
+00677f70 92   xor     eax, eax
+00677f72      push    ebp
+00677f73      push    $677f9e                ; System.@HandleFinally
+00677f78      push    dword ptr fs:[eax]
+00677f7b      mov     fs:[eax], esp
+00677f7e 93   mov     edx, [ebp-4]
+00677f81      mov     eax, ebx
+00677f83      mov     ecx, [eax]
+[...]
+
+date/time         : 2020-09-22, 13:05:28, 503ms
+computer name     : HARMONY-DESKTOP
+user name         : harmony
+operating system  : Windows NT New Service Pack 1 build 7601
+system language   : English
+system up time    : 1 day 3 hours
+program up time   : 2 seconds
+processors        : 4x Intel(R) Core(TM)2 Quad CPU Q9400 @ 2.66GHz
+physical memory   : 1660/6143 MB (free/total)
+free disk space   : (C:) 397.84 GB
+display mode      : 1600x900, 32 bit
+process id        : $1748
+allocated memory  : 36.73 MB
+executable        : AMXX_Studio.exe
+exec. date/time   : 2006-12-19 16:34
+version           : 1.4.3.3
+madExcept version : 3.0b
+callstack crc     : $3168e053, $9035d739, $9035d739
+exception number  : 2
+exception class   : EIniFileException
+exception message : In C:\Users\harmony\Desktop\dota+\dota-plus\compile\config\Settings.ini kann nicht geschrieben werden.
+
+main thread ($65c):
+0048c3e8 +05c AMXX_Studio.exe IniFiles                TIniFile.WriteString
+0048ae07 +033 AMXX_Studio.exe IniFiles                TCustomIniFile.WriteInteger
+0067a067 +233 AMXX_Studio.exe UnitfrmSettings 366 +31 TfrmSettings.FormCreate
+004d4bed +031 AMXX_Studio.exe Forms                   TCustomForm.DoCreate
+004d48cd +011 AMXX_Studio.exe Forms                   TCustomForm.AfterConstruction
+004041db +007 AMXX_Studio.exe System                  @AfterConstruction
+004d48a4 +174 AMXX_Studio.exe Forms                   TCustomForm.Create
+004dc249 +031 AMXX_Studio.exe Forms                   TApplication.CreateForm
+0068ec16 +0fe AMXX_Studio.exe AMXX_Studio      76 +14 initialization
+7625344b +010 kernel32.dll                            BaseThreadInitThunk
+
+thread $1a14:
+775f018d +00 ntdll.dll
+7625344b +10 kernel32.dll  BaseThreadInitThunk
+
+modules:
+00400000 AMXX_Studio.exe 1.4.3.3          C:\Users\harmony\Desktop\dota+\dota-plus\compile
+10000000 scilexer.dll    1.6.6.0          C:\Users\harmony\Desktop\dota+\dota-plus\compile
+65050000 comctl32.dll    5.82.7601.18837  C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.18837_none_ec86b8d6858ec0bc
+71630000 winspool.drv    6.1.7601.17514   C:\Windows\system32
+71fa0000 olepro32.dll    6.1.7601.17514   C:\Windows\system32
+720b0000 comctl32.DLL    6.10.7601.18837  C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d
+72250000 uxtheme.dll     6.1.7600.16385   C:\Windows\system32
+724a0000 winmm.dll       6.1.7601.17514   C:\Windows\system32
+724e0000 dwmapi.dll      6.1.7600.16385   C:\Windows\system32
+72500000 msimg32.dll     6.1.7600.16385   C:\Windows\system32
+72510000 version.dll     6.1.7600.16385   C:\Windows\system32
+73de0000 wsock32.dll     6.1.7600.16385   C:\Windows\system32
+74f30000 CRYPTBASE.dll   6.1.7601.24384   C:\Windows\syswow64
+74f40000 SspiCli.dll     6.1.7601.24384   C:\Windows\syswow64
+75210000 MSCTF.dll       6.1.7601.23915   C:\Windows\syswow64
+752e0000 LPK.dll         6.1.7601.23930   C:\Windows\syswow64
+752f0000 GDI32.dll       6.1.7601.23914   C:\Windows\syswow64
+75570000 sechost.dll     6.1.7600.16385   C:\Windows\SysWOW64
+755b0000 SHELL32.dll     6.1.7601.23893   C:\Windows\syswow64
+76200000 WS2_32.dll      6.1.7601.23451   C:\Windows\syswow64
+76240000 kernel32.dll    6.1.7601.24384   C:\Windows\syswow64
+76360000 oleaut32.dll    6.1.7601.23775   C:\Windows\syswow64
+76400000 SHLWAPI.dll     6.1.7601.17514   C:\Windows\syswow64
+76600000 psapi.dll       6.1.7600.16385   C:\Windows\syswow64
+76610000 imm32.dll       6.1.7601.17514   C:\Windows\syswow64
+76670000 comdlg32.dll    6.1.7601.17514   C:\Windows\syswow64
+766f0000 RPCRT4.dll      6.1.7601.24384   C:\Windows\syswow64
+767f0000 ole32.dll       6.1.7601.23889   C:\Windows\syswow64
+76950000 KERNELBASE.dll  6.1.7601.24384   C:\Windows\syswow64
+769a0000 CRYPT32.dll     6.1.7601.24382   C:\Windows\syswow64
+76ad0000 WINTRUST.dll    6.1.7601.24382   C:\Windows\syswow64
+76b10000 MSASN1.dll      6.1.7601.17514   C:\Windows\syswow64
+76b30000 msvcrt.dll      7.0.7601.17744   C:\Windows\syswow64
+76c10000 USP10.dll       1.626.7601.23894 C:\Windows\syswow64
+76cb0000 advapi32.dll    6.1.7601.24384   C:\Windows\syswow64
+76d60000 NSI.dll         6.1.7601.23889   C:\Windows\syswow64
+770b0000 USER32.dll      6.1.7601.23594   C:\Windows\syswow64
+775d0000 ntdll.dll       6.1.7601.24384   C:\Windows\SysWOW64
+
+processes:
+0000 Idle                                0
+0004 System                              0
+0114 smss.exe                            0
+0198 csrss.exe                           0
+01d0 wininit.exe                         0
+01e0 csrss.exe                           1
+0208 services.exe                        0
+0224 lsass.exe                           0
+022c lsm.exe                             0
+0284 winlogon.exe                        1
+02c0 svchost.exe                         0
+02fc NVDisplay.Container.exe             0
+0330 svchost.exe                         0
+03a4 svchost.exe                         0
+03c4 svchost.exe                         0
+03f0 svchost.exe                         0
+0100 svchost.exe                         0
+042c svchost.exe                         0
+0488 NVDisplay.Container.exe             1
+0500 spoolsv.exe                         0
+053c svchost.exe                         0
+05f4 svchost.exe                         0
+0618 svchost.exe                         0
+0644 pservice.exe                        0
+0680 svchost.exe                         0
+06a8 Lavasoft.WCAssistant.WinService.exe 0
+0760 taskhost.exe                        1 normal
+079c dwm.exe                             1 high
+07f4 explorer.exe                        1 normal
+0588 WindscribeService.exe               0
+08c4 Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+08e4 PreMiD.exe                          1 normal
+0a74 WmiPrvSE.exe                        0
+0aa8 ShareX.exe                          1 normal
+0bec Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0844 Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0a54 SearchIndexer.exe                   0
+0c7c svchost.exe                         0
+0ecc HourBoostr.exe                      1 normal
+0f10 wmpnetwk.exe                        0
+0fc8 conhost.exe                         1 normal
+0d64 Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0e94 Discord.exe                         1 idle         C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0e78 svchost.exe                         0
+10bc PreMiD.exe                          1 normal
+11ac PreMiD.exe                          1 above normal
+05e4 PreMiD.exe                          1 normal
+0f78 Discord.exe                         1 normal       C:\Users\harmony\AppData\Local\Discord\app-0.0.308
+0dec sppsvc.exe                          0
+1444 svchost.exe                         0
+14ec PresentationFontCache.exe           0
+1f78 taskhost.exe                        1
+1174 steam.exe                           1
+0fa8 steamwebhelper.exe                  1
+1d0c steamwebhelper.exe                  1
+07dc steamwebhelper.exe                  1 normal
+09a8 steamwebhelper.exe                  1
+139c steamwebhelper.exe                  1 idle
+0bc4 steamwebhelper.exe                  1 above normal
+0e64 firefox.exe                         1 normal
+09d8 firefox.exe                         1 normal
+0a80 firefox.exe                         1 normal
+1c68 firefox.exe                         1 normal
+1f7c firefox.exe                         1 idle
+1a98 firefox.exe                         1 idle
+1cac steamwebhelper.exe                  1 idle
+0184 audiodg.exe                         0
+1a50 firefox.exe                         1 normal
+15f0 Code.exe                            1 normal
+1d64 Code.exe                            1 normal
+0bd0 Code.exe                            1 above normal
+1148 Code.exe                            1 normal
+114c Code.exe                            1 normal
+0650 Code.exe                            1 normal
+1bd4 SearchProtocolHost.exe              0
+11e4 Code.exe                            1 normal
+1f4c Code.exe                            1 normal
+0da8 CodeHelper.exe                      1 normal       c:\Users\harmony\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\platform\files\node\watcher\win32
+06c8 conhost.exe                         1 normal
+1788 cpptools.exe                        1 normal       c:\Users\harmony\.vscode\extensions\ms-vscode.cpptools-1.0.0\bin
+1f88 conhost.exe                         1 normal
+0b10 conhost.exe                         1 normal
+1258 vsls-agent.exe                      1 normal       c:\Users\harmony\.vscode\extensions\ms-vsliveshare.vsliveshare-1.0.2740\dotnet_modules
+1560 Code.exe                            1 normal
+1b78 Spotify.exe                         1 normal       C:\Users\harmony\AppData\Roaming\Spotify
+16e4 Spotify.exe                         1 normal       C:\Users\harmony\AppData\Roaming\Spotify
+0778 Spotify.exe                         1 above normal C:\Users\harmony\AppData\Roaming\Spotify
+171c Spotify.exe                         1 normal       C:\Users\harmony\AppData\Roaming\Spotify
+1c78 Spotify.exe                         1 idle         C:\Users\harmony\AppData\Roaming\Spotify
+15c4 SearchFilterHost.exe                0
+1748 AMXX_Studio.exe                     1 normal       C:\Users\harmony\Desktop\dota+\dota-plus\compile
+
+hardware:
++ Batteries
+  - Microsoft Composite Battery
++ Computer
+  - ACPI x64-based PC
++ Disk drives
+  - SAMSUNG HD322GJ ATA Device
+  - ST3500418AS ATA Device
+  - ST3500418AS ATA Device
++ Display adapters
+  - NVIDIA GeForce GTX 750 (driver 26.21.14.3086)
++ Floppy disk drives
+  - Floppy disk drive
++ Floppy drive controllers
+  - Standard floppy disk controller
++ Human Interface Devices
+  - HID-compliant consumer control device
+  - HID-compliant consumer control device
+  - HID-compliant device
+  - HID-compliant device
+  - HID-compliant device
+  - HID-compliant device
+  - USB Input Device
+  - USB Input Device
+  - USB Input Device
+  - USB Input Device
+  - USB Input Device
++ IDE ATA/ATAPI controllers
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 0
+  - ATA Channel 1
+  - ATA Channel 1
+  - ATA Channel 1
+  - Standard Dual Channel PCI IDE Controller
+  - Standard Dual Channel PCI IDE Controller
+  - Standard Dual Channel PCI IDE Controller
++ Keyboards
+  - HID Keyboard Device
+  - HID Keyboard Device
+  - HID Keyboard Device
+  - HID Keyboard Device
+  - HID Keyboard Device
+  - HID Keyboard Device
++ Mice and other pointing devices
+  - HID-compliant mouse
++ Monitors
+  - Generic PnP Monitor
++ Network adapters
+  - Realtek RTL8168C(P)/8111C(P) Family PCI-E Gigabit Ethernet NIC (NDIS 6.20)
+  - Windscribe VPN (driver 9.0.0.21)
++ Ports (COM & LPT)
+  - Communications Port (COM1)
++ Processors
+  - Intel(R) Core(TM)2 Quad CPU    Q9400  @ 2.66GHz
+  - Intel(R) Core(TM)2 Quad CPU    Q9400  @ 2.66GHz
+  - Intel(R) Core(TM)2 Quad CPU    Q9400  @ 2.66GHz
+  - Intel(R) Core(TM)2 Quad CPU    Q9400  @ 2.66GHz
++ Sound, video and game controllers
+  - High Definition Audio Device
+  - NVIDIA High Definition Audio (driver 1.3.38.16)
++ Storage volume shadow copies
+  - Generic volume shadow copy
+  - Generic volume shadow copy
+  - Generic volume shadow copy
+  - Generic volume shadow copy
+  - Generic volume shadow copy
++ System devices
+  - ACPI Fixed Feature Button
+  - ACPI Power Button
+  - Composite Bus Enumerator
+  - Direct memory access controller
+  - File as Volume Driver
+  - High Definition Audio Controller
+  - High Definition Audio Controller
+  - High precision event timer
+  - Intel(R) 4 Series Chipset PCI Express Root Port - 2E21
+  - Intel(R) 4 Series Chipset Processor to I/O Controller - 2E20
+  - Intel(R) 82801 PCI Bridge - 244E
+  - Intel(R) 82802 Firmware Hub Device
+  - Intel(R) ICH10 Family PCI Express Root Port 1 - 3A40
+  - Intel(R) ICH10 Family PCI Express Root Port 5 - 3A48
+  - Intel(R) ICH10 Family PCI Express Root Port 6 - 3A4A
+  - Intel(R) ICH10 Family SMBus Controller - 3A30
+  - Intel(R) ICH10 LPC Interface Controller - 3A18
+  - Microsoft ACPI-Compliant System
+  - Microsoft System Management BIOS Driver
+  - Microsoft Virtual Drive Enumerator Driver
+  - Motherboard resources
+  - Motherboard resources
+  - Motherboard resources
+  - Motherboard resources
+  - Motherboard resources
+  - Numeric data processor
+  - PCI bus
+  - Plug and Play Software Device Enumerator
+  - Programmable interrupt controller
+  - Remote Desktop Device Redirector Bus
+  - System board
+  - System board
+  - System CMOS/real time clock
+  - System speaker
+  - System timer
+  - Terminal Server Keyboard Driver
+  - Terminal Server Mouse Driver
+  - UMBus Enumerator
+  - UMBus Root Bus Enumerator
+  - Volume Manager
++ Universal Serial Bus controllers
+  - Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3A
+  - Intel(R) ICH10 Family USB Enhanced Host Controller - 3A3C
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A34
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A35
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A36
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A37
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A38
+  - Intel(R) ICH10 Family USB Universal Host Controller - 3A39
+  - USB Composite Device
+  - USB Composite Device
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+  - USB Root Hub
+
+cpu registers:
+eax = 02431260
+ebx = 020353f4
+ecx = 00000000
+edx = 0048c3ed
+esi = 0067a740
+edi = 0067a72c
+eip = 0048c3ed
+esp = 0018fb24
+ebp = 0018fb68
+
+stack dump:
+0018fb24  ed c3 48 00 de fa ed 0e - 01 00 00 00 07 00 00 00  ..H.............
+0018fb34  38 fb 18 00 ed c3 48 00 - 60 12 43 02 f4 53 03 02  8.....H.`.C..S..
+0018fb44  40 a7 67 00 2c a7 67 00 - 68 fb 18 00 54 fb 18 00  @.g.,.g.h...T...
+0018fb54  2c a7 67 00 40 a7 67 00 - 70 ac 48 00 18 2d 44 02  ,.g.@.g.p.H..-D.
+0018fb64  0b 67 42 02 90 fb 18 00 - 0a ae 48 00 50 27 44 02  .gB.......H.P'D.
+0018fb74  9c fb 18 00 dc 45 40 00 - 90 fb 18 00 30 86 67 00  .....E@.....0.g.
+0018fb84  8c 21 02 02 70 ac 48 00 - 00 00 00 00 68 fd 18 00  .!..p.H.....h...
+0018fb94  6a a0 67 00 01 00 00 00 - 70 fd 18 00 dc 45 40 00  j.g.....p....E@.
+0018fba4  68 fd 18 00 74 e0 58 02 - 00 00 00 00 00 00 00 00  h...t.X.........
+0018fbb4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fbc4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fbd4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fbe4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fbf4  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fc04  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fc14  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fc24  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fc34  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fc44  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+0018fc54  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
+
+disassembling:
+[...]
+0067a04d
+0067a052       jmp     loc_67a044
+0067a052
+0067a052     ; ---------------------------------------------------------
+0067a052
+0067a054 366   push    1
+0067a056       mov     ecx, $67a72c           ; 'MakeBaks'
+0067a05b       mov     edx, $67a740           ; 'Editor'
+0067a060       mov     eax, [$69c59c]
+0067a065       mov     ebx, [eax]
+0067a067     > call    dword ptr [ebx+$c]
+0067a067
+0067a06a 367   push    1
+0067a06c       mov     ecx, $67a750           ; 'DontLoadFilesTwice'
+0067a071       mov     edx, $67a740           ; 'Editor'
+0067a076       mov     eax, [$69c59c]
+0067a07b       mov     ebx, [eax]
+0067a07d       call    dword ptr [ebx+$c]
+0067a07d
+0067a080 368   push    1
+0067a082       mov     ecx, $67a76c           ; 'Auto-Indent'
+[...]
+
