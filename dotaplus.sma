@@ -241,7 +241,7 @@ StartCasual(){
 	new Text[1024]
 	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_CASUAL_SEARCHING")
 	new menu = menu_create(main_menu, "func_anew_menu")
-		
+
 	return PLUGIN_HANDLED
 }
 
@@ -250,12 +250,12 @@ StartComp(){
 	new Text[1024]
 	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_COMP_SEARCHING")
 	new menu = menu_create(main_menu, "func_anew_menu")
-		
+
 	return PLUGIN_HANDLED
 }
 /*
 //////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
+//////////////            End of search menus         ////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 */
