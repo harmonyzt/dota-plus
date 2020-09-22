@@ -2,7 +2,8 @@
 #include < csx >
 #include < dhudmessage >
 #include < csdm >
-#define ver "1.2"
+#include < dota_colorchat >
+#define ver "1.3"
 
 //	Includes skills and menus, each class
 #include "dota_base/plugin_init.h"
@@ -231,7 +232,6 @@ public func_StartSearch(id, menu, item){
 		case 2:{
 			StartComp()
 			}
-		//case add
 	}
 	return PLUGIN_HANDLED
 }
