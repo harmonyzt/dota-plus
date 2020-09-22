@@ -153,18 +153,18 @@ public DOTA_MAIN_MENU(id){
 	static main_menu[700]
 	new Text[1024]
 	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"MAINMENU_TITLE")
-	new menu = menu_create(main_menu, "func_anew_menu")
+	new menu = menu_create(main_menu, "func_MAIN_MENU")
 
-		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_START_SEARCH");
-		menu_additem(menu, Text,"1")
+	formatex(Text, charsmax(Text), "%L", id, "MAINMENU_START_SEARCH");
+	menu_additem(menu, Text,"1")
 
-		formatex(Text, charsmax(Text), "%L", id, "MAINMENU_SETTINGS");
-		menu_additem(menu, Text,"2")
-		//menu_additem
-		menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
-		menu_display(id,menu,0)
-		
-		return PLUGIN_HANDLED
+	formatex(Text, charsmax(Text), "%L", id, "MAINMENU_SETTINGS");
+	menu_additem(menu, Text,"2")
+	
+	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
+	menu_display(id,menu,0)
+
+	return PLUGIN_HANDLED
 }
 
 public func_MAIN_MENU(id, menu, item){
@@ -187,7 +187,7 @@ public func_MAIN_MENU(id, menu, item){
 			}
 		//case add
 		}
-	 return PLUGIN_HANDLED
+	return PLUGIN_HANDLED
 }
 
 /*
@@ -199,18 +199,18 @@ public StartSearch(id){
 	static main_menu[700]
 	new Text[1024]
 	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_TITLE")
-	new menu = menu_create(main_menu, "func_anew_menu")
+	new menu = menu_create(main_menu, "func_StartSearch")
 
-		formatex(Text, charsmax(Text), "%L", id, "SEARCHMENU_STARTCASUAL");
-		menu_additem(menu, Text,"1")
+	formatex(Text, charsmax(Text), "%L", id, "SEARCHMENU_STARTCASUAL");
+	menu_additem(menu, Text,"1")
 
-		formatex(Text, charsmax(Text), "%L", id, "SEARCHMENU_STARTCOMP");
-		menu_additem(menu, Text,"1")
-		//menu_additem
-		menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
-		menu_display(id,menu,0)
+	formatex(Text, charsmax(Text), "%L", id, "SEARCHMENU_STARTCOMP");
+	menu_additem(menu, Text,"1")
+	
+	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
+	menu_display(id,menu,0)
 		
-		return PLUGIN_HANDLED
+	return PLUGIN_HANDLED
 }
 
 public func_StartSearch(id, menu, item){
@@ -226,32 +226,32 @@ public func_StartSearch(id, menu, item){
 	new key = str_to_num( data );
 	switch( key ){
 		case 1:{
-			StartCasual(id)
+			StartCasual()
 			}
 		case 2:{
-			StartComp(id)
+			StartComp()
 			}
 		//case add
-		}
-	 return PLUGIN_HANDLED
+	}
+	return PLUGIN_HANDLED
 }
 
-StartCasual(id){
+StartCasual(){
 	static main_menu[700]
 	new Text[1024]
-	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_CASUAL_SEARCHING",)
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_CASUAL_SEARCHING")
 	new menu = menu_create(main_menu, "func_anew_menu")
 		
-		return PLUGIN_HANDLED
+	return PLUGIN_HANDLED
 }
 
-StartComp(id){
+StartComp(){
 	static main_menu[700]
 	new Text[1024]
 	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_COMP_SEARCHING")
 	new menu = menu_create(main_menu, "func_anew_menu")
 		
-		return PLUGIN_HANDLED
+	return PLUGIN_HANDLED
 }
 /*
 //////////////////////////////////////////////////////////////////////
@@ -269,27 +269,27 @@ public AdminSettings(id){
 	static main_menu[700]
 	new Text[1024]
 	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"ADMINMENU_TITLE")
-	new menu = menu_create(main_menu, "func_anew_menu")
+	new menu = menu_create(main_menu, "func_AdminSettings")
 
-		formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_CASUAL");
-		menu_additem(menu, Text,"1")
+	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_CASUAL");
+	menu_additem(menu, Text,"1")
 
-		formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_COMP");
-		menu_additem(menu, Text,"2")
+	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_COMP");
+	menu_additem(menu, Text,"2")
 
-		formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_BAN");
-		menu_additem(menu, Text,"3")
+	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_BAN");
+	menu_additem(menu, Text,"3")
 
-		formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_KICK");
-		menu_additem(menu, Text,"4")
+	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_KICK");
+	menu_additem(menu, Text,"4")
 
-		menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
-		menu_display(id,menu,0)
+	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
+	menu_display(id,menu,0)
 		
-		return PLUGIN_HANDLED
+	return PLUGIN_HANDLED
 }
 
-public func_AdminSettings(id){
+public func_AdminSettings(id, menu, item){
 	if( item == MENU_EXIT ){
 		menu_destroy( menu );
 		return PLUGIN_HANDLED;
@@ -302,10 +302,10 @@ public func_AdminSettings(id){
 	new key = str_to_num( data );
 	switch( key ){
 		case 1:{
-			ChangeToCasual(id)
+			ChangeToCasual()
 			}
 		case 2:{
-			ChangeToComp(id)
+			ChangeToComp()
 			}
 		case 3:{
 			//Ban player
@@ -313,8 +313,8 @@ public func_AdminSettings(id){
 		case 4:{
 			//Kick
 			}
-		}
-	 return PLUGIN_HANDLED
+	}
+	return PLUGIN_HANDLED
 }
 
 
@@ -324,7 +324,7 @@ public func_AdminSettings(id){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
-ChangeToCasual(id){
+ChangeToCasual(){
 	server_cmd("pb removebots");
 	server_cmd("mp_winlimit 0");
 	server_cmd("mp_roundtime 5");
@@ -333,7 +333,7 @@ ChangeToCasual(id){
 	server_cmd("pb fillserver %s", random_num(1,100));
 }
 
-ChangeToComp(id){
+ChangeToComp(){
 	server_cmd("pb removebots");
 	server_cmd("mp_winlimit 16");
 	server_cmd("mp_roundtime 3");
