@@ -1,3 +1,5 @@
+ #define ACCESS_LEVEL ADMIN_LEVEL_H
+
 new first_blood=0
 new name_killer[33]
 enum _:Massives
@@ -9,11 +11,15 @@ new const levels[] =
 {
 	0,5,6,7,10,11,12,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,32,34,38,42,50,60,70
 };	//How much you need to get xp to next level
+
 enum _:Classes
 {
     sniper
 };
 
+new GameMode=0              //0 - CSDM (default)
+                            //1 - Casual
+                            //2 - Competitive
 new syncGameStatus
 
 public plugin_init(){

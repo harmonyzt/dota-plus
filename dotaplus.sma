@@ -6,9 +6,11 @@
 #define ver "1.3"
 
 //	Includes skills and menus, each class
-#include "dota_base/plugin_init.h"
 #include "dota_base/precache.inl"
+#include "dota_base/plugin_init.h"
+//End of includes.
 
+//Registering death of player
 public func_player_dead(id){
 	static killer, victim;
 	killer = read_data(1)
@@ -90,9 +92,20 @@ public client_putinserver(id){
 }
 
 public new_round(){
-	// Activating csdm and letting players play without any restrictions or classes
-	// TODO: Menu with starting queue or declining it
-	csdm_set_active(1);
+	// Deciding what to do if according to GameMode
+	switch(GameMode){
+		case 0:{
+			csdm_set_active(1)
+		}
+
+		case 1:{
+			csdm_set_active(0)
+		}
+
+		case 2:{
+			csdm_set_active(0)
+		}
+	}
 	first_blood=0
 }
 
@@ -103,6 +116,7 @@ public checklvl(id){
 		UserData[id][exp] = 0
 	}
 }
+
 // Renders your lvl/exp on your screen
 // TODO: Displaying current status of the game 
 public render_info(){
@@ -150,6 +164,7 @@ public native_is_on_kstreak(id){
 	return 0
 }
 
+///Main menu
 public DOTA_MAIN_MENU(id){
 	static main_menu[700]
 	new Text[1024]
@@ -161,7 +176,12 @@ public DOTA_MAIN_MENU(id){
 
 	formatex(Text, charsmax(Text), "%L", id, "MAINMENU_SETTINGS");
 	menu_additem(menu, Text,"2")
-	
+
+	if(get_user_flags(id) && ACCESS_LEVEL){
+	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_TITLE");
+	menu_additem(menu, Text,"3")
+	}
+
 	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
 	menu_display(id,menu,0)
 
@@ -186,7 +206,10 @@ public func_MAIN_MENU(id, menu, item){
 		case 2:{
 			MenuSettings(id)
 			}
-		//case add
+		case 3:{
+			AdminSettings(id)
+		}
+
 		}
 	return PLUGIN_HANDLED
 }
@@ -210,7 +233,7 @@ public StartSearch(id){
 	
 	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
 	menu_display(id,menu,0)
-		
+	
 	return PLUGIN_HANDLED
 }
 
@@ -227,31 +250,21 @@ public func_StartSearch(id, menu, item){
 	new key = str_to_num( data );
 	switch( key ){
 		case 1:{
-			StartCasual()
+			StartCasual(id)
 			}
 		case 2:{
-			StartComp()
+			StartComp(id)
 			}
 	}
 	return PLUGIN_HANDLED
 }
 
-StartCasual(){
-	static main_menu[700]
-	new Text[1024]
-	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_CASUAL_SEARCHING")
-	new menu = menu_create(main_menu, "func_anew_menu")
+StartCasual(id){
 
-	return PLUGIN_HANDLED
 }
 
-StartComp(){
-	static main_menu[700]
-	new Text[1024]
-	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_COMP_SEARCHING")
-	new menu = menu_create(main_menu, "func_anew_menu")
+StartComp(id){
 
-	return PLUGIN_HANDLED
 }
 /*
 //////////////////////////////////////////////////////////////////////
@@ -262,8 +275,39 @@ StartComp(){
 
 
 public MenuSettings(id){
-
+	static main_menu[700]
+	new Text[1024]
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"MAINMENU_SETTINGS")
+	new menu = menu_create(main_menu, "func_MenuSettings")
+	if(GameMode == 0 || GameMode == 1){
+	formatex(Text, charsmax(Text), "%L", id, "SETTINGSMENU_SPEC");
+	menu_additem(menu, Text,"1")
+	}
+	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
+	menu_display(id,menu,0)
+		
+	return PLUGIN_HANDLED
 }
+
+public func_MenuSettings(id, menu, item){
+	if( item == MENU_EXIT ){
+		menu_destroy( menu );
+		return PLUGIN_HANDLED;
+	}
+
+	new data[6], iName[64];
+	new access, callback;
+     
+	menu_item_getinfo( menu, item, access, data,5, iName, 63, callback );
+	new key = str_to_num( data );
+	switch( key ){
+		case 1:{
+			//spec mode switch
+			}
+	}
+	return PLUGIN_HANDLED
+}
+
 
 public AdminSettings(id){
 	static main_menu[700]
