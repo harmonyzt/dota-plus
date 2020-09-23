@@ -48,6 +48,8 @@ ADMINMENU_KICK = Выгнать игрока
 
 GAMESTATUS = Режим:
 
+SETTINGSMENU_SPEC = Перейти в спектаторы
+
 [en]
 DOTA_FIRST_BLOOD = %s drew first blood!
 DOTA_KILLINGSPREE = %s is on a killing spree
