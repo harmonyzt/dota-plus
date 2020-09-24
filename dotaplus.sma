@@ -259,11 +259,11 @@ public func_StartSearch(id, menu, item){
 	return PLUGIN_HANDLED
 }
 
-StartCasual(id){
+StartCasual(){
 
 }
 
-StartComp(id){
+StartComp(){
 
 }
 /*
