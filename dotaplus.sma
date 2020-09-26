@@ -2,7 +2,7 @@
 #include < csx >
 #include < dhudmessage >
 #include < csdm >
-#include < dota_colorchat >
+#include < colorchat2 >
 #define ver "1.3"
 
 //	Includes skills and menus, each class
@@ -253,14 +253,16 @@ public func_StartSearch(id, menu, item){
 			StartCasual(id)
 			}
 		case 2:{
-			StartComp(id)
+			StartComp()
 			}
 	}
 	return PLUGIN_HANDLED
 }
 
-StartCasual(){
-
+StartCasual(id){
+	new clientName[32]
+	get_user_name(id, clientName, 31)
+	ColorChat(0, GREEN, "%L", LANG_PLAYER, "CHAT_", clientName)
 }
 
 StartComp(){
