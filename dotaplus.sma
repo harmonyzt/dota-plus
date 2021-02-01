@@ -385,7 +385,7 @@ ChangeToComp(){
 	server_cmd("mp_roundtime 3");
 	server_cmd("mp_freezetime 10");
 	server_cmd("sv_restart 1");
-	server_cmd("pb fillserver %s", random_num(50,100));
+	server_cmd("pb fillserver %s", random_num(80,100));
 }
 
 
