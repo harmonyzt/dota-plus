@@ -14,7 +14,7 @@ new const levels[] =
 
 enum _:Classes
 {
-    sniper
+    sniper, timbersaw, pudge
 };
 
 new GameMode=0              //0 - CSDM (default)

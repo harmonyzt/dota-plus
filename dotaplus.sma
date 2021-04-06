@@ -174,18 +174,10 @@ public DOTA_MAIN_MENU(id){
 	formatex(Text, charsmax(Text), "%L", id, "MAINMENU_START_SEARCH");
 	menu_additem(menu, Text,"1")
 
-	formatex(Text, charsmax(Text), "%L", id, "MAINMENU_SETTINGS");
-	menu_additem(menu, Text,"2")
-
-	if(get_user_flags(id) && ACCESS_LEVEL){
-	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_TITLE");
-	menu_additem(menu, Text,"3")
-	}
-
 	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
 	menu_display(id,menu,0)
 
-	return PLUGIN_HANDLED
+	return PLUGIN_HANDLED;
 }
 
 public func_MAIN_MENU(id, menu, item){
@@ -203,12 +195,6 @@ public func_MAIN_MENU(id, menu, item){
 		case 1:{
 			StartSearch(id)
 			}
-		case 2:{
-			MenuSettings(id)
-			}
-		case 3:{
-			AdminSettings(id)
-		}
 
 		}
 	return PLUGIN_HANDLED
@@ -253,89 +239,39 @@ public func_StartSearch(id, menu, item){
 			StartCasual(id)
 			}
 		case 2:{
-			StartComp()
+			StartComp(id)
 			}
 	}
 	return PLUGIN_HANDLED
 }
+/*
 
+Starting new search for casual
+
+*/
 StartCasual(id){
 	new clientName[32]
 	get_user_name(id, clientName, 31)
-	ColorChat(0, GREEN, "%L", LANG_PLAYER, "CHAT_", clientName)
+	ColorChat(0, GREEN, "%L", LANG_PLAYER, "CHAT_CASUALSTARTED", clientName)
+	set_task(random_float(10,60),"casualtimer",_,_,_,"b")
 }
 
-StartComp(){
-
-}
-/*
-//////////////////////////////////////////////////////////////////////
-//////////////            End of search menus         ////////////////
-//////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////
-*/
-
-
-public MenuSettings(id){
+public casualtimer(id){
 	static main_menu[700]
 	new Text[1024]
-	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"MAINMENU_SETTINGS")
-	new menu = menu_create(main_menu, "func_MenuSettings")
-	if(GameMode == 0 || GameMode == 1){
-	formatex(Text, charsmax(Text), "%L", id, "SETTINGSMENU_SPEC");
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_TITLE")
+	new menu = menu_create(main_menu, "func_CasualFound")
+
+	formatex(Text, charsmax(Text), "%L", LANG_PLAYER, "SEARCHMENU_CASUALFOUND");
 	menu_additem(menu, Text,"1")
-	}
+	
 	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
 	menu_display(id,menu,0)
-		
+	
 	return PLUGIN_HANDLED
 }
 
-public func_MenuSettings(id, menu, item){
-	if( item == MENU_EXIT ){
-		menu_destroy( menu );
-		return PLUGIN_HANDLED;
-	}
-
-	new data[6], iName[64];
-	new access, callback;
-     
-	menu_item_getinfo( menu, item, access, data,5, iName, 63, callback );
-	new key = str_to_num( data );
-	switch( key ){
-		case 1:{
-			//spec mode switch
-			}
-	}
-	return PLUGIN_HANDLED
-}
-
-
-public AdminSettings(id){
-	static main_menu[700]
-	new Text[1024]
-	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"ADMINMENU_TITLE")
-	new menu = menu_create(main_menu, "func_AdminSettings")
-
-	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_CASUAL");
-	menu_additem(menu, Text,"1")
-
-	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_COMP");
-	menu_additem(menu, Text,"2")
-
-	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_BAN");
-	menu_additem(menu, Text,"3")
-
-	formatex(Text, charsmax(Text), "%L", id, "ADMINMENU_KICK");
-	menu_additem(menu, Text,"4")
-
-	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
-	menu_display(id,menu,0)
-		
-	return PLUGIN_HANDLED
-}
-
-public func_AdminSettings(id, menu, item){
+public func_CasualFound(id, menu, item){
 	if( item == MENU_EXIT ){
 		menu_destroy( menu );
 		return PLUGIN_HANDLED;
@@ -350,19 +286,52 @@ public func_AdminSettings(id, menu, item){
 		case 1:{
 			ChangeToCasual()
 			}
-		case 2:{
+	}
+	return PLUGIN_HANDLED
+}
+/*
+
+Starting new search for competitive
+
+*/
+StartComp(id){
+	new clientName[32]
+	get_user_name(id, clientName, 31)
+	ColorChat(0, GREEN, "%L", LANG_PLAYER, "CHAT_COMPSTARTED", clientName)
+	set_task(random_num(10,60),"comptimer")	//Setting timer to show the 'match found' menu
+}
+public comptimer(id){
+	static main_menu[700]
+	new Text[1024]
+	format(main_menu, charsmax(main_menu), "%L",LANG_PLAYER,"SEARCHMENU_TITLE")
+	new menu = menu_create(main_menu, "func_CompFound")
+
+	formatex(Text, charsmax(Text), "%L",LANG_PLAYER, "SEARCHMENU_COMPFOUND");
+	menu_additem(menu, Text,"1")
+	
+	menu_setprop(menu, MPROP_EXITNAME, "%L",LANG_PLAYER, "MAINMENU_EXIT")
+	menu_display(id,menu,0)
+	
+	return PLUGIN_HANDLED
+}
+public func_CompFound(id, menu, item){
+	if( item == MENU_EXIT ){
+		menu_destroy( menu );
+		return PLUGIN_HANDLED;
+	}
+
+	new data[6], iName[64];
+	new access, callback;
+     
+	menu_item_getinfo( menu, item, access, data,5, iName, 63, callback );
+	new key = str_to_num( data );
+	switch( key ){
+		case 1:{
 			ChangeToComp()
-			}
-		case 3:{
-			//Ban player
-			}
-		case 4:{
-			//Kick
 			}
 	}
 	return PLUGIN_HANDLED
 }
-
 
 /*
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -376,7 +345,20 @@ ChangeToCasual(){
 	server_cmd("mp_roundtime 5");
 	server_cmd("mp_freezetime 2");
 	server_cmd("sv_restart 1");
-	server_cmd("pb fillserver %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	server_cmd("pb add %s", random_num(1,100));
+	GameMode=1
 }
 
 ChangeToComp(){
@@ -385,7 +367,16 @@ ChangeToComp(){
 	server_cmd("mp_roundtime 3");
 	server_cmd("mp_freezetime 10");
 	server_cmd("sv_restart 1");
-	server_cmd("pb fillserver %s", random_num(80,100));
+	server_cmd("pb add %s", random_num(65,100));
+	server_cmd("pb add %s", random_num(80,100));
+	server_cmd("pb add %s", random_num(70,100));
+	server_cmd("pb add %s", random_num(75,100));
+	server_cmd("pb add %s", random_num(55,100));
+	server_cmd("pb add 100");
+	server_cmd("pb add %s", random_num(62,100));
+	server_cmd("pb add %s", random_num(73,100));
+	server_cmd("pb add %s", random_num(70,100));
+	GameMode=2
 }
 
 

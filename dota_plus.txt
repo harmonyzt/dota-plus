@@ -50,11 +50,14 @@ GAMESTATUS = Режим:
 
 SETTINGSMENU_SPEC = Перейти в спектаторы
 
+CHAT_CASUALSTARTED = %s Начал поиск обычной игры!
+SEARCHMENU_CASUALFOUND = Ваша казуальная игра найдена!
+
 [en]
 DOTA_FIRST_BLOOD = %s drew first blood!
 DOTA_KILLINGSPREE = %s is on a killing spree
 DOTA_DOMINATING = %s is dominating
-DOTA_MEGAKILL = %s is on a mega-kill kill streak
+DOTA_MEGAKILL = %s is on a mega-kill streak
 DOTA_UNSTOPPABLE = %s is unstoppable
 DOTA_WICKEDSICK = %s is wicked sick!
 DOTA_MONSTERKILL = %s is on a monster kill streak!
