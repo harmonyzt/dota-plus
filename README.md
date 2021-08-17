@@ -1,5 +1,4 @@
 # dota-plus
-Under active development.
 Just my works, there's nothing to see.
 
 To compile it you need to get the latest version of AMXX-Studio (1.4.3)
