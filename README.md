@@ -1,5 +1,5 @@
 # dota-plus
-Just my works, there's nothing to see.
+No longer supported. Watch [MSM](https://github.com/harmonyzt/mservermanager)
 
 To compile it you need to get the latest version of AMXX-Studio (1.4.3)
 
