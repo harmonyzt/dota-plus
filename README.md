@@ -1,5 +1,4 @@
-# dota-plus
-No longer supported. Watch [MSM](https://github.com/harmonyzt/mservermanager)
+# No longer supported. Watch [MSM](https://github.com/harmonyzt/mservermanager)
 
 To compile it you need to get the latest version of AMXX-Studio (1.4.3)
 
